@@ -1,0 +1,21 @@
+{
+  "accounts": [
+    { "alias": "home", "email": "you@example.com", "scope": "modify" },
+    { "alias": "team", "email": "you@example.org", "scope": "readonly" }
+  ],
+  "enable_send": false,
+
+  "export_roots": { "default": "~/Downloads/gmail-exports" },
+  "pdf": {
+    "chrome_path": null,
+    "max_pages": 50,
+    "render_timeout_seconds": 45,
+    "memory_budget_mb": null,
+    "scratch_budget_mb": null,
+    "monitor_interval_ms": null
+  },
+  "label_admin": true,
+  "label_delete_max_messages": 10000,
+
+  "_comment": "Copy this file to ~/.gmail-mcp-private/accounts.json and put in your real accounts. One entry per Gmail/Workspace account: alias = the short name you use in tool calls ([A-Za-z0-9_-]+, unique); email = the exact address (unique); scope = 'modify' (read + label/archive + draft, never permanent delete) or 'readonly'. enable_send=false means no send tool is exposed; arming send ALSO requires GMAIL_MCP_ALLOW_SEND=1 in the server's environment, so a config edit alone can never enable sending. export_roots: named folders exports may write into; each must already exist, be owned by you, and not be group- or world-writable. pdf: PDF stays off until the three budgets are set from your own measurements AND tools/render_gates.py --write-record has passed on this machine's Chrome (see README). label_admin=true registers create/update/delete/undo label tools; delete_label refuses labels with more than label_delete_max_messages messages."
+}
