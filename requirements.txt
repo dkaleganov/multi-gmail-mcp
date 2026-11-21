@@ -4,7 +4,7 @@
 #   pip install -r requirements.txt && pip freeze > requirements.lock
 # and thereafter install from requirements.lock so nothing updates underneath us.
 
-mcp>=1.2.0                      # official Anthropic MCP SDK (FastMCP)
+mcp>=1.10.0,<2                  # official Anthropic MCP SDK (FastMCP; tool titles need 1.10, v2 removed FastMCP)
 google-api-python-client>=2.100.0   # official Google API client (Gmail)
 google-auth>=2.30.0                 # official Google auth
 google-auth-oauthlib>=1.2.0         # official OAuth installed-app (loopback) flow
